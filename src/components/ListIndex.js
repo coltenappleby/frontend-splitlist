@@ -1,4 +1,3 @@
-import ListPreview from './ListPreview.js'
 import React, {useState, useEffect} from 'react';
 
 
@@ -15,13 +14,15 @@ function ListIndex() {
 
     console.log(lists)
 
+    const allLists = lists.map((list) => {
+        <li key = {list.id}> {list.name} </li>
+    })
+
     return(
         <div>
             {lists.length > 0 ? (
-                lists.forEach(list => {
-                    <ListPreview listInfo={list}></ListPreview>
-                })
-            ) : (<div></div>) }
+                <ul> {allLists} </ul>
+            ) : (<ul> No Lists available </ul>) }
         </div>
     )
 
