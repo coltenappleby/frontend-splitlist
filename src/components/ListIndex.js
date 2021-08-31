@@ -1,6 +1,9 @@
 import React, {useState, useEffect} from 'react';
 
 
+// Would like to only retrive lists names, ids for the logged in user. no other info. will grab items associated
+// when user selects a list
+
 
 function ListIndex() {
 
