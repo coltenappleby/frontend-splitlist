@@ -1,10 +1,9 @@
-import List from 'List.js';
 import ListPreview from 'ListPreview.js'
 import React, {useState, useEffect} from 'react';
 
 
 
-function ListIndex({}) {
+function ListIndex() {
 
     const[lists, setLists] = useState([])
 
@@ -25,3 +24,5 @@ function ListIndex({}) {
     )
 
 }
+
+export default ListIndex;
