@@ -1,5 +1,5 @@
 import '../App.css'
-import ListIndex from 'ListIndex.js'
+import ListIndex from './ListIndex.js'
 
 function App() {
 

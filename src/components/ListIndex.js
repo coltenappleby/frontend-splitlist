@@ -1,4 +1,4 @@
-import ListPreview from 'ListPreview.js'
+import ListPreview from './ListPreview.js'
 import React, {useState, useEffect} from 'react';
 
 
@@ -12,6 +12,8 @@ function ListIndex() {
         .then(resp => resp.json())
         .then(setLists)
       }, [])
+
+    console.log(lists)
 
     return(
         <div>
