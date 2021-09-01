@@ -18,7 +18,8 @@ function ListIndex() {
     console.log(lists)
 
     const allLists = lists.map((list) => {
-        <li key = {list.id}> {list.name} </li>
+        // add links to show pages 
+        return(<li key = {list.id}> {list.name} </li>)
     })
 
     return(
