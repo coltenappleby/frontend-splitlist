@@ -1,13 +1,9 @@
 import '../App.css';
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-//   Link
-} from "react-router-dom"; // npm install react-router-dom
+import { BrowserRouter as Router, Switch, Route} from "react-router-dom"; // npm install react-router-dom
 import ListIndex from './ListIndex.js';
 import ListShow from './ListShow.js'
+import NavBar from './NavBar';
 
 
 
