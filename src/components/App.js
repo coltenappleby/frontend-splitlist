@@ -10,28 +10,23 @@ import NavBar from './NavBar';
 function App() {
 
     return(
-        // <Header />
-        // < Nav Bar/ >
-        // Maybe make the user sign in??
-        
-        // now time for routes
-        // <Switch>
-        //      <Route exact path="/">
-        //          <PostList posts={posts} setPosts={setPosts} removePost={removePost} />
-        //      </Route>
-        // </Switch> 
+        <div className = "all-of-it">
+            
 
-        <Router>
-            <Switch>
-                <Route exact path="/">
-                    <ListIndex />
-                </Route>
 
-                <Route exact path="/lists/:id">
-                    <ListShow />
-                </Route>
-            </Switch>
-        </Router>
+            <Router>
+                <NavBar/>
+                <Switch>
+                    <Route exact path="/">
+                        <ListIndex />
+                    </Route>
+
+                    <Route exact path="/lists/:id">
+                        <ListShow />
+                    </Route>
+                </Switch>
+            </Router>
+        </div>
 
     )
 }

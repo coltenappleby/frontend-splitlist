@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom';
 
 function NavBar() {
 
+return(
     <NavLink
         to="/"
         exact
@@ -14,7 +15,8 @@ function NavBar() {
     >
         All Lists
     </NavLink>
-    
+)
+
 
 
 
