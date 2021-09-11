@@ -6,15 +6,26 @@ import { NavLink } from 'react-router-dom';
 function NavBar() {
 
 return(
-    <NavLink
-        to="/"
-        exact
-        activeStyle = {{
-        background: "rgb(186, 197, 206)"
-        }}
-    >
-        All Lists
-    </NavLink>
+    <div className="NavBar" >
+        <NavLink
+            to="/"
+            exact
+            activeStyle = {{
+            background: "blue"
+            }}
+        >
+            All Lists 
+        </NavLink>
+        <NavLink
+            to="/users/14"
+            exact
+            activeStyle = {{
+            background: "red"
+            }}
+            >
+            User14
+        </NavLink>
+    </div>
 )
 
 
