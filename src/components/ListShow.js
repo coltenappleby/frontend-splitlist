@@ -3,7 +3,7 @@ import React, {useState, useEffect} from 'react';
 
 // need to set up routes
 
-function ListShow({id}) {
+function ListShow() {
 
     const[listInfo, setListInfo] = useState()
 
