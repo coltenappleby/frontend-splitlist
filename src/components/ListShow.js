@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom'
 
 
-// need to set up routes
 
 function ListShow() {
 
@@ -27,9 +26,9 @@ function ListShow() {
     return(
         <div>
             {listInfo === '1' ? '' : 
-            <div> 
-                <p> List Information: </p>
-                <p> {listInfo.id} </p>
+            <div className = "List Information"> 
+                List Name: {listInfo.name} <br/>
+                Active: {listInfo.active === true ? "active" : "not active"}
             </div>
             }
         </div>
