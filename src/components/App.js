@@ -25,7 +25,7 @@ function App() {
         //      </Route>
         // </Switch> 
 
-
+        <Router>
             <Switch>
                 <Route exact path="/">
                     <ListIndex />
@@ -35,6 +35,7 @@ function App() {
                     <ListShow />
                 </Route>
             </Switch>
+        </Router>
 
     )
 }
