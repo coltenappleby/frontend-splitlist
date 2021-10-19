@@ -2,7 +2,6 @@ import React from 'react';
 
 function ItemPreview({id, name, notes, location, completed}) {
 
-
     return(
         <div>
             Name: {name} <br/>

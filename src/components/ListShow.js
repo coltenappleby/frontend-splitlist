@@ -11,7 +11,7 @@ function ListShow() {
     let { id } = useParams()
  
     useEffect(() => {
-        fetch(`http://localhost:3000//lists/${id}`)
+        fetch(`http://localhost:3000/lists/${id}`)
         .then(resp => resp.json())
         .then((data) => {
             setListInfo(data)
@@ -25,7 +25,8 @@ function ListShow() {
         <div>
             {listInfo === '1' ? '' : 
                 <div className = "ListShow"> 
-                    <div className = "List Information"> 
+                    <div className = "List Information">  
+                    {/* Header Information about the list */}
                         List Name: {listInfo.name} <br/>
                         Active: {listInfo.active === true ? "active" : "not active"}
                     </div> <br/>

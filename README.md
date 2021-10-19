@@ -14,3 +14,16 @@ ii. Information for each item
 5. Search for people
 b. log in
 c. log out
+
+
+### To Do
+
+* Create List
+* Create Item
+* Item Show
+* Multi User
+* Friends
+* Assign Users to Items/Add Friends to a list
+* Header
+* Better Nav
+* Make it easier to read
