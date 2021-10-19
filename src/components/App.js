@@ -5,6 +5,7 @@ import ListIndex from './ListIndex.js';
 import ListShow from './ListShow.js'
 import NavBar from './NavBar';
 import UserPage from './UserPage';
+import ItemShow from './ItemShow';
 
 
 
@@ -28,6 +29,10 @@ function App() {
 
                     <Route exact path="/users/:id">
                         <UserPage />
+                    </Route>
+
+                    <Route exact path ="/items/:id">
+                        <ItemShow />
                     </Route>
 
                 </Switch>

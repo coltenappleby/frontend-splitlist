@@ -19,6 +19,8 @@ function ListShow() {
         })
     }, [id])
 
+    // List Show is receiving all information about the items. No need to re-query them.
+
     const items = itemsData.map((item) => <ItemPreview {...item} key = {item.id}  />)
 
     return(
