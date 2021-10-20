@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom'
-import ItemPreview from './ItemPreview';
+import ItemCard from './ItemCard';
 
 
 
@@ -21,7 +21,7 @@ function ListShow() {
 
     // List Show is receiving all information about the items. No need to re-query them.
 
-    const items = itemsData.map((item) => <ItemPreview {...item} key = {item.id}  />)
+    const items = itemsData.map((item) => <ItemCard {...item} key = {item.id}  />)
 
     return(
         <div>
