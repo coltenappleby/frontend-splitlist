@@ -34,39 +34,7 @@ function ItemCard({id, name, notes, location, completed}) {
         setShowEdit(!showEdit)
     }
 
-    // function handleSubmit(e){
-    //     e.preventDefault()
-    //     fetch(`http://localhost:3000/items/${id}`, {
-    //         method: 'PATCH',
-    //         headers: {
-    //             'Content-Type': 'application/json',
-    //             'Accept': 'application/json'
-    //         },
-    //         body: JSON.stringify(formData)
-
-    //     }
-    // }}
-
-    // function handleSubmit(e){
-    //     e.preventDefault() 
-    //     fetch(`http://localhost:3000/posts/${id}`, {
-    //         method: 'PATCH',
-    //         headers: {
-    //             'Content-Type': 'application/json',
-    //             'Accept': 'application/json'
-    //         },
-    //         body: JSON.stringify(formData)
-    //     })
-    //     .then(resp => resp.json())
-    //     .then((updatedPost) => {
-    //         if(updatedPost.id){
-    //             // setErrors([])
-    //             history.push(`/posts/${id}`)
-    //         } else {
-    //             setErrors(updatedPost)
-    //         }  
-    //     })  
-    // }
+ 
 
     return(
         <div>
@@ -79,7 +47,7 @@ function ItemCard({id, name, notes, location, completed}) {
                 :
                 <div> 
                     {/* This is where the edit item will go */}
-                    {<ItemEdit {...itemInfo} />} {/* handleSubmit={handleSubmit} */}
+                    {<ItemEdit {...itemInfo} setItemInfo={setItemInfo} />} {/* handleSubmit={handleSubmit} */}
                     <button onClick={handleChange}>Close</button>
                 </div>
             }

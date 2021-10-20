@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
-function ItemEdit({id, name, notes, location, completed, handleSubmit}) {
+function ItemEdit({id, name, notes, location, completed, setItemInfo}) {
 
-
+    // this might not work if we want to re-render item on change
     const [formData, setFormData] = useState({
         name: name,
         notes: notes,
@@ -10,13 +10,27 @@ function ItemEdit({id, name, notes, location, completed, handleSubmit}) {
         completed: completed
     })
 
-    // function handleSubmit(e){}
-
     function handleChange(e){
         setFormData({
             ...formData,
             [e.target.name] : e.target.value
         })
+    }
+    
+    function handleSubmit(e){
+        e.preventDefault() 
+        fetch(`http://localhost:3000/items/${id}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(formData) 
+        })
+        .then(resp => resp.json())
+        .then((data) => {
+            setItemInfo(data) 
+        })  
     }
 
     return(
@@ -25,7 +39,13 @@ function ItemEdit({id, name, notes, location, completed, handleSubmit}) {
                 <label> Name: </label>
                 <input type="text" name="name" value={formData.name} onChange={handleChange}/><br/>
                 <label> Notes: </label>
-                <input type="text" name="notes" value={formData.notes} onChange={handleChange}/><br/>
+                <textarea 
+                    name="notes" 
+                    value={formData.notes} 
+                    onChange={handleChange}
+                    rows="8"
+                    cols="60"
+                /><br/>
                 <label> Location: </label>
                 <input type="text" name="notes" value={formData.notes} onChange={handleChange}/><br/>
       
