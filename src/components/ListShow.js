@@ -15,7 +15,7 @@ function ListShow() {
         .then(resp => resp.json())
         .then((data) => {
             setListInfo(data)
-            setItemsData(data.items)
+            setItemsData(data.items)        
         })
     }, [id])
 
