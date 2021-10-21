@@ -47,7 +47,7 @@ function ItemCard({id, name, notes, location, completed}) {
                 :
                 <div> 
                     {/* This is where the edit item will go */}
-                    {<ItemEdit {...itemInfo} setItemInfo={setItemInfo} />} {/* handleSubmit={handleSubmit} */}
+                    {<ItemEdit {...itemInfo} setItemInfo={setItemInfo} closeEdit={handleChange} />} {/* handleSubmit={handleSubmit} */}
                     <button onClick={handleChange}>Close</button>
                 </div>
             }

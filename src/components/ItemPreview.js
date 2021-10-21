@@ -6,11 +6,11 @@ function ItemPreview({id, name, notes, location, completed}) {
 
     return( 
         <div>
-            Name: {name} <br/>
+            Name: {name}
+            <Link to= {`/items/${id}`} > LINK</Link> <br/>
             Notes: {notes} <br/>
             Location: {location} <br/>
-            Completed: {completed === true ? "completed" : "incomplete"} <br/> <br/>
-            <Link to= {`/items/${id}`} > LINK</Link>
+            Completed: {completed === true ? "completed" : "incomplete"} <br/>
         </div>
     )
 

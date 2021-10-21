@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function ItemEdit({id, name, notes, location, completed, setItemInfo}) {
+function ItemEdit({id, name, notes, location, completed, setItemInfo, closeEdit}) {
 
     // this might not work if we want to re-render item on change
     const [formData, setFormData] = useState({
@@ -29,7 +29,8 @@ function ItemEdit({id, name, notes, location, completed, setItemInfo}) {
         })
         .then(resp => resp.json())
         .then((data) => {
-            setItemInfo(data) 
+            setItemInfo(data)
+            closeEdit()
         })  
     }
 
@@ -47,7 +48,7 @@ function ItemEdit({id, name, notes, location, completed, setItemInfo}) {
                     cols="60"
                 /><br/>
                 <label> Location: </label>
-                <input type="text" name="notes" value={formData.notes} onChange={handleChange}/><br/>
+                <input type="text" name="location" value={formData.location} onChange={handleChange}/><br/>
       
                 <input type="submit" />
             </form>
