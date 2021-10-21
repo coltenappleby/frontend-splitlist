@@ -33,9 +33,7 @@ function ItemCard({id, name, notes, location, completed}) {
     function handleChange(e) {
         setShowEdit(!showEdit)
     }
-
- 
-
+    
     return(
         <div>
             {showEdit === false ? 

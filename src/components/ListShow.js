@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom'
-import ItemCard from './ItemCard';
+import ItemCard from './ItemCard.js';
+import ItemCreate from './ItemCreate.js';
 
 
 
@@ -8,6 +9,7 @@ function ListShow() {
 
     const[listInfo, setListInfo] = useState('1')
     const[itemsData, setItemsData] = useState([])
+    const[createItemHidden, setCreateItemHidden] = useState(true)
     let { id } = useParams()
  
     useEffect(() => {
@@ -15,9 +17,14 @@ function ListShow() {
         .then(resp => resp.json())
         .then((data) => {
             setListInfo(data)
-            setItemsData(data.items)        
+            setItemsData(data.items) 
         })
     }, [id])
+
+    function handleItemCreateButton(e){
+        setCreateItemHidden(!createItemHidden)
+        console.log(itemsData)   
+    }
 
     // List Show is receiving all information about the items. No need to re-query them.
 
@@ -26,16 +33,23 @@ function ListShow() {
     return(
         <div>
             {listInfo === '1' ? '' : 
-                <div className = "ListShow"> 
-                    <div className = "List Information">  
-                    {/* Header Information about the list */}
+                <div className = "list-show"> 
+                    <div className = "list-information">  
+                        {/* Header Information about the list */}
                         List Name: {listInfo.name} <br/>
                         Active: {listInfo.active === true ? "active" : "not active"}
                     </div> <br/>
                     <div className = "Items">
                         {items}
                     </div>
+                    {!createItemHidden && 
+                        <div className = "item-create"> 
+                            <ItemCreate list_id={id} allItemsData={itemsData} setAllItemsData={setItemsData} />
+                        </div>
+                    }
+                    <button onClick={handleItemCreateButton}>{createItemHidden ? 'Create a new Item' : 'Close'}</button>
                 </div>
+                
 
                 
             }
